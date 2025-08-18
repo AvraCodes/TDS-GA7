@@ -1,3 +1,4 @@
+---
 marp: true
 theme: custom   # 👈 use a custom theme name, not "default"
 math: katex
@@ -34,7 +35,7 @@ style: |
     font-size:13px;
     opacity:.7;
   }
-
+---
   section.lead h1 {
     color: var(--accent);
     letter-spacing: 0.02em;
