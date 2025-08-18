@@ -1,13 +1,13 @@
----
 marp: true
+theme: custom   # 👈 use a custom theme name, not "default"
 math: katex
 paginate: true
 size: 16:9
-title: "Product Documentation Presentation"
+title: "Product Docs — Minimal"
 author: "Avra"
-footer: "© 2025 • 24f1002255@ds.study.iitm.ac.in"
+footer: "24f1002255@ds.study.iitm.ac.in"
 style: |
-  /* @theme custom */
+  /* @theme custom */   /* 👈 required: declare the custom theme */
   :root { --accent: #0b5fff; --muted: #6b7280; }
 
   section {
