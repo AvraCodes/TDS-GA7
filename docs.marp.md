@@ -1,86 +1,83 @@
-# app.py
-# Run with: marimo run app.py
+---
+marp: true
+math: katex
+paginate: true
+size: 16:9
+title: "Product Documentation Presentation"
+author: "Avra"
+footer: "© 2025 • 24f1002255@ds.study.iitm.ac.in"
+style: |
+  /* @theme custom */
+  :root { --accent: #0b5fff; --muted: #6b7280; }
 
-import marimo
+  section {
+    font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Arial;
+    color:#111;
+    background:#fff;
+  }
 
-__generated_with = "0.6.0"
-app = marimo.App()
+  h1 { color: var(--accent); }
 
+  section::after {
+    content: attr(data-marpit-pagination) ' / ' attr(data-marpit-pagination-total);
+    position: absolute;
+    bottom: 18px;
+    right: 24px;
+    opacity:.6;
+    font-size:13px;
+  }
 
-# Cell 1: Imports and contact
-@app.cell
-def __():
-    import marimo as mo
-    import numpy as np
-    import matplotlib.pyplot as plt
+  footer {
+    position: absolute;
+    left: 24px;
+    bottom: 18px;
+    font-size:13px;
+    opacity:.7;
+  }
 
-    # Author: Avra (Data Scientist)
-    # Contact: 24f1002255@ds.study.iitm.ac.in
-    return mo, np, plt
+  section.lead h1 {
+    color: var(--accent);
+    letter-spacing: 0.02em;
+  }
 
+  section.hero {
+    color: #fff;
+    text-shadow: 0 2px 8px rgba(0,0,0,.45);
+  }
+---
 
-# Cell 2: Synthetic dataset
-@app.cell
-def __():
-    # Generate a simple dataset: x vs quadratic relation with noise
-    rng = np.random.default_rng(42)
-    x = np.linspace(0, 10, 200)
-    noise = rng.normal(0, 2, size=x.shape)
-    y = 2 * x**2 + 3 * x + 5 + noise
+class: lead
 
-    # Data flows forward: (x, y) used in plots & analysis
-    return x, y
+# Product Documentation
+### Single-Source & Version-Controlled  
+Contact: **24f1002255@ds.study.iitm.ac.in**
 
+---
 
-# Cell 3: Interactive slider
-@app.cell
-def __(mo):
-    # Slider for polynomial degree (variable dependency on y,x later)
-    degree_slider = mo.ui.slider(1, 5, value=2, label="Polynomial Degree")
+class: hero
+backgroundImage: url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1920&auto=format&fit=crop')
+backgroundSize: cover
 
-    # Output the widget so it’s visible in the UI
-    return degree_slider
+# Architecture Snapshot
 
+---
 
-# Cell 4: Polynomial fitting (depends on x, y, degree_slider)
-@app.cell
-def __(degree_slider, np, x, y):
-    # Fit polynomial of selected degree
-    degree = degree_slider.value
-    coeffs = np.polyfit(x, y, degree)
-    poly = np.poly1d(coeffs)
+## Algorithmic Complexity
 
-    # Predicted values
-    y_pred = poly(x)
+- Sorting (MergeSort):  
+  $$T(n) = 2T\!\left(\frac{n}{2}\right) + \Theta(n) \;\;\implies\;\; T(n)=\Theta(n \log n)$$
 
-    # Data flows to plotting and metrics
-    return degree, coeffs, y_pred, poly
+- Binary Search:  
+  $$T(n)=T\!\left(\tfrac{n}{2}\right)+\Theta(1) \;\;\implies\;\; T(n)=\Theta(\log n)$$
 
+---
 
-# Cell 5: Plot actual vs predicted (depends on y_pred, x, y)
-@app.cell
-def __(plt, x, y, y_pred, degree):
-    fig, ax = plt.subplots(figsize=(6, 4))
-    ax.scatter(x, y, s=15, alpha=0.6, label="Observed")
-    ax.plot(x, y_pred, color="red", label=f"Polynomial deg={degree}")
-    ax.set_xlabel("X")
-    ax.set_ylabel("Y")
-    ax.set_title("Polynomial Regression Fit")
-    ax.legend()
-    fig.tight_layout()
-    fig
-    return fig,
+## Source Reference
 
+📄 View raw deck in GitHub:  
+[docs.marp.md](https://raw.githubusercontent.com/avra/GA7/main/docs.marp.md)
 
-# Cell 6: Dynamic Markdown output (depends on degree, coeffs)
-@app.cell
-def __(mo, degree, coeffs):
-    mo.md(f"""
-    ### Fit Summary
+---
 
-    - **Selected Polynomial Degree**: {degree}
-    - **Coefficients**: {coeffs}
-
-    Increasing the degree may improve the fit (lower error) but risks **overfitting**.
-    """)
-    return
+# Thank You!  
+📩 24f1002255@ds.study.iitm.ac.in
