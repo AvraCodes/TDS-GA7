@@ -55,7 +55,7 @@ Contact: **24f1002255@ds.study.iitm.ac.in**
 ---
 
 class: hero
-backgroundImage: url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1920&auto=format&fit=crop')
+backgroundImage: url("./assets/bg.jpg")
 backgroundSize: cover
 
 # Architecture Snapshot
