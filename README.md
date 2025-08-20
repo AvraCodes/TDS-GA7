@@ -9,3 +9,7 @@ Contact: 24f1002255@ds.study.iitm.ac.in
 The chart below was generated using Python with the `circlify` and `matplotlib` libraries.
 
 ![Portfolio Allocation](chart.png)
+
+
+Average: 5.66
+Industry Target: 8
