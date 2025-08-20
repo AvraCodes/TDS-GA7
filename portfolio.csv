@@ -1,0 +1,17 @@
+sector,asset,investment
+Technology,Microsoft,1194461
+Technology,Apple,2388922
+Technology,NVIDIA,1831478
+Technology,Alphabet,1500000
+Healthcare,Merck,8413998
+Healthcare,Johnson & Johnson,5300000
+Healthcare,Pfizer,3100000
+Finance,Wells Fargo,4948730
+Finance,JPMorgan Chase,6800000
+Finance,Bank of America,4200000
+Consumer Staples,Procter & Gamble,3500000
+Consumer Staples,Coca-Cola,2800000
+Energy,Exxon Mobil,4100000
+Energy,Chevron,3400000
+Industrials,Boeing,2100000
+Industrials,Caterpillar,1800000
