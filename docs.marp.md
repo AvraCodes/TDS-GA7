@@ -140,6 +140,31 @@ blockquote {
 
 <!-- _class: content -->
 
+## Interactive Forecast Slider
+
+Adjust the projected **growth rate** using the slider below:
+
+<div id="slider-demo" style="margin-top:20px; background:#fff; color:#333; padding:20px; border-radius:8px; max-width:500px;">
+  <label for="growthSlider"><strong>Growth Rate (%):</strong></label><br>
+  <input type="range" id="growthSlider" min="0" max="20" value="5" step="1" style="width:100%;">
+  <p>Selected Growth: <span id="growthValue">5%</span></p>
+  <p>Projected Revenue (baseline $1M): <span id="projectedRevenue">$1.05M</span></p>
+</div>
+
+<script>
+  const slider = document.getElementById("growthSlider");
+  const growthValue = document.getElementById("growthValue");
+  const revenueValue = document.getElementById("projectedRevenue");
+  const baseline = 1000000;
+
+  slider.addEventListener("input", () => {
+    const rate = slider.value;
+    growthValue.textContent = rate + "%";
+    const projected = baseline * (1 + rate/100);
+    revenueValue.textContent = "$" + (projected/1000000).toFixed(2) + "M";
+  });
+</script>
+
 ## Table of Contents
 
 1. **Overview & Architecture**
