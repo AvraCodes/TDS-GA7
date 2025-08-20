@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Quarterly Earnings — Reveal.js</title>
+
+  <!-- Reveal.js from CDN (works for GH Pages) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/theme/black.min.css" id="theme">
+
+  <!-- Highlight.js for code syntax highlighting -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css">
+
+  <style>
+    /* Small branding/footer */
+    .footer-contact {
+      position: fixed;
+      left: 20px;
+      bottom: 10px;
+      font-size: 13px;
+      opacity: 0.8;
+      z-index: 1000;
+    }
+
+    /* Slightly larger code blocks in slides */
+    pre code { font-size: 13px; }
+
+    /* Optional: subtle rules for fragment animations */
+    .fragment {
+      transition: opacity 300ms ease, transform 300ms ease;
+    }
+  </style>
+
+  <!-- MathJax (for LaTeX equations) -->
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] },
+      svg: { fontCache: 'global' }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" defer></script>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+      <!-- Title slide -->
+      <section>
+        <h1>Quarterly Earnings Report</h1>
+        <h3>Product & Strategy Overview — Q2</h3>
+        <p><strong>Presenter:</strong> Avra — Technical Consultant</p>
+        <p><strong>Contact:</strong> <a href="mailto:24f1002255@ds.study.iitm.ac.in">24f1002255@ds.study.iitm.ac.in</a></p>
+
+        <aside class="notes">
+          Introduce yourself, the audience, and state the purpose: high level earnings, drivers, and decisions required.
+        </aside>
+      </section>
+
+      <!-- Markdown slide (inline) -->
+      <section data-markdown>
+        <script type="text/template">
+## Key Highlights (Markdown slide)
+
+- Revenue growth: **+7.4% QoQ**
+- Operating margin improvement driven by cost efficiencies
+- Product A adoption up **18%**
+
+> Use this slide to give the audience the 30-second snapshot before diving into details.
+        </script>
+
+        <aside class="notes">
+          Call out the three bullets, then promise data-backed charts on the next slides.
+        </aside>
+      </section>
+
+      <!-- Slide with fragments (animated elements) -->
+      <section>
+        <h2>Revenue Breakdown</h2>
+
+        <ul>
+          <li class="fragment">Product A — Subscription revenue</li>
+          <li class="fragment">Product B — Transaction fees</li>
+          <li class="fragment">Enterprise — Large deals</li>
+        </ul>
+
+        <figure>
+          <!-- Placeholder for a chart image; replace with real chart in repo -->
+          <img class="fragment" data-fragment-index="3" src="assets/revenue_breakdown.png" alt="Revenue chart" style="max-width:60%;margin-top:16px;">
+        </figure>
+
+        <aside class="notes">
+          Walk through each fragment. Show how Product A is the main growth driver; reveal chart as last fragment.
+        </aside>
+      </section>
+
+      <!-- Code sample with syntax highlighting -->
+      <section>
+        <h2>Example: Reproducible calculation (Python)</h2>
+
+        <pre><code class="language-python"># compute compound growth rate (CAGR)
+def cagr(start_value, end_value, years):
+    return (end_value / start_value) ** (1.0 / years) - 1
+
+# Example:
+print(f"CAGR: {cagr(100, 125, 2):.2%}")
+</code></pre>
+
+        <aside class="notes">
+          Explain that code is included for reproducibility — link to data pipeline in repo.
+        </aside>
+      </section>
+
+      <!-- Math slide -->
+      <section>
+        <h2>Financial Formula</h2>
+
+        <p>Net Present Value (NPV):</p>
+        <p style="font-size:1.2em;">
+          $$\mathrm{NPV} = \sum_{t=0}^{T} \frac{CF_t}{(1 + r)^t}$$
+        </p>
+
+        <p>Where $CF_t$ is cash flow at time $t$ and $r$ is discount rate.</p>
+
+        <aside class="notes">
+          Use this slide when discussing valuation or capital allocation decisions. Optionally show an example with numbers.
+        </aside>
+      </section>
+
+      <!-- Slide with markdown code block (demonstrates markdown + highlight) -->
+      <section data-markdown>
+        <script type="text/template">
+### Quick SQL (Markdown code block)
+
+```sql
+-- Top performing accounts this quarter
+SELECT account_id, SUM(amount) AS total
+FROM transactions
+WHERE txn_date BETWEEN '2025-04-01' AND '2025-06-30'
+GROUP BY account_id
+ORDER BY total DESC
+LIMIT 10;
